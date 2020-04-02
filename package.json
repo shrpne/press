@@ -1,69 +1,32 @@
 {
-  "name": "nuxt-press",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nuxt/press.git"
-  },
-  "workspaces": [
-    "packages/*",
-    "distributions/*"
-  ],
+  "name": "@nuxt-press/core",
+  "version": "0.2.0-beta.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/nuxt/press",
   "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@nuxt-press/utils": "0.2.0-beta.0",
+    "@nuxt/blueprints": "0.1.0-beta.4",
+    "@nuxt/http": "^0.3.5",
+    "@nuxt/markdown": "^0.0.21",
+    "defu": "^0.0.3",
+    "fs-extra": "^8.1.0",
+    "gray-matter": "^4.0.2",
+    "hable": "3.0.0-0",
+    "normalize.css": "^8.0.1",
+    "prismjs": "^1.17.1",
+    "wysiwyg.css": "^0.0.3"
+  },
   "scripts": {
-    "clean": "rimraf ./**/.nuxt packages/**/dist test/**/dist packages/**/node_modules",
-    "coverage": "codecov",
     "dev": "nuxt dev",
     "build": "nuxt build",
-    "dist": "rimraf dist && rollup -c rollup.config.js && rimraf dist/blueprints/*/test/",
-    "generate": "nuxt generate",
     "start": "nuxt start",
-    "lint": "eslint --fix --ext .js packages distributions test",
-    "postinstall": "lerna link",
-    "test": "yarn test:unit && yarn test:fixtures && yarn test:e2e",
-    "test:unit": "jest test/unit",
-    "test:e2e": "jest packages/*/test/e2e",
-    "test:fixtures": "jest packages/*/test/fixtures"
+    "press": "nuxt press"
   },
-  "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.6.3",
-    "@nuxtjs/eslint-config": "^1.1.2",
-    "babel-eslint": "^10.0.3",
-    "babel-jest": "^24.9.0",
-    "babel-plugin-dynamic-import-node": "^2.3.0",
-    "browserstack-local": "^1.4.2",
-    "chromedriver": "^77.0.0",
-    "codecov": "^3.6.1",
-    "eslint": "^6.5.1",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.19.0",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "eslint-plugin-vue": "^5.2.3",
-    "exit": "^0.1.2",
-    "geckodriver": "^1.19.0",
-    "get-port": "^5.0.0",
-    "jest": "^24.9.0",
-    "lerna": "^3.18.1",
-    "node-env-file": "^0.1.8",
-    "nuxt": "^2.10.1",
-    "puppeteer-core": "^1.20.0",
-    "rimraf": "^3.0.0",
-    "rollup": "^1.25.1",
-    "rollup-plugin-auto-external": "^2.0.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-copy": "^3.1.0",
-    "selenium-webdriver": "^4.0.0-alpha.4",
-    "std-env": "^2.2.1",
-    "tib": "^0.7.2",
-    "vue-jest": "^3.0.5"
-  },
-  "dependencies": {
-    "hable": "3.0.0-0"
+  "publishConfig": {
+    "access": "public"
   }
 }
