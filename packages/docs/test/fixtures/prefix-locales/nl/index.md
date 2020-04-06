@@ -1,3 +1,0 @@
-# Hallo Wereld
-
-Tekst

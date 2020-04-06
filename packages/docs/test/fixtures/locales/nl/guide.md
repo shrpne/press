@@ -1,3 +1,0 @@
-# Gids
-
-Gids
