@@ -1,3 +1,0 @@
-# About
-
-Well, ok then.
