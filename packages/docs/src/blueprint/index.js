@@ -193,7 +193,7 @@ export default class PressDocsBlueprint extends PressBlueprint {
 
       for (const path in this.data.pages) {
         const page = this.data.pages[path]
-        if (page.meta && page.meta.sidebar === 'auto') {
+        if (this.config.sidebarAllAuto || (page.meta && page.meta.sidebar === 'auto')) {
           config.sidebars[path.toLowerCase()] = tocToTree(page.toc)
         }
       }
