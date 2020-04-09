@@ -240,19 +240,7 @@ export default class PressDocsBlueprint extends PressBlueprint {
   }
 
   createGenerateRoutes (rootDir, prefix) {
-    let home = '/'
-    if (this.config.$hasLocales) {
-      const [{ code: locale }] = this.config.$locales
-      home = `/${locale}`
-    }
-
-    home = prefix(home)
-
     return [
-      {
-        route: prefix('/'),
-        payload: importModule(rootDir, 'sources', home)
-      },
       ...Object.values(this.data.sources).map(({ path: route }) => ({
         route,
         payload: importModule(rootDir, 'sources', route)
